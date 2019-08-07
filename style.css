@@ -4,19 +4,29 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
 .clearfix:after {visibility: hidden; display: block; font-size: 0; content: ''; clear: both; height: 0; }
 * { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 .visuallyHidden:not(:focus):not(:active) { position: absolute; width: 1px; height: 1px; margin: -1px;border: 0;padding: 0;white-space: nowrap;clip-path: inset(100%);clip: rect(00 0 0);overflow: hidden;}
-/* .skipLink {position: absolute; left: -1000px; top: 5px; z-index: 999; background: white; color: black;}
-.skipLink:focus {left: 0;} */
+
+.skipLink {
+  position: absolute;
+  left: -1000px;
+  top: 5px;
+  z-index: 999;
+  background: white;
+  color: black;
+}
+
+.skipLink:focus {
+  left: 0;
+}
 
 /* BASE STYLES */
 
 html {
+    /* set root font size to be 20px */
     font-size: 125%;
 }
 
 body {
     font-family: 'Catamaran', sans-serif;
-    /* font-family: 'Montserrat', sans-serif; */
-    font-size: 1.2rem;
     font-weight: 400;
 }
 
@@ -32,15 +42,18 @@ h1, h2, h3, h4 {
 
 h1 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 9.1rem;
+    font-size: 7.32rem;
     color: #e75605;
-    line-height: 7.5rem;
+    line-height: 6rem;
+}
 
+.line-break {
+    display: block;
 }
 
 h2 { 
     font-family: 'Montserrat', sans-serif;
-    font-size: 2.6rem;
+    font-size: 2.1rem;
     color: #e75605;
     font-weight: 700;
     /* text-align: center; */
@@ -48,7 +61,7 @@ h2 {
 
 h3 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     color: #e75605;
     font-weight: 700;
     text-align: center;
@@ -57,15 +70,16 @@ h3 {
 .button {
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
-    font-size: 1.2rem;
+    font-size: 1rem;
     text-align: center;
-    line-height: 1.8rem;
+    line-height: 1.45rem;
     color: #1f2022;
     background: #ffffff;
     border: 2px solid #e75605;
     padding: 7px 25px;
+    margin-top: 15px;
     text-transform: uppercase;
-    /* transition: all .2s linear; */
+    transition: all .2s linear;
 }
 
 .button:hover {
@@ -75,7 +89,7 @@ h3 {
 
 p {
     color: #1f2022;
-    line-height: 1.8rem;
+    line-height: 1.45rem;
 }
 
 ul {
@@ -86,8 +100,8 @@ ul {
 
 a {
     font-family: 'Montserrat', sans-serif;
-    font-size: 1.2rem;
-    line-height: 1.81rem;
+    font-size: 1rem; 
+    line-height: 1.45rem;
     text-align: right;
     text-decoration: none;
     color: #1f2022;
@@ -131,7 +145,7 @@ header h1 {
 .mainNav a {
     display: block;
     padding: 20px 20px;
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: #1f2022;
     text-transform: uppercase;
     transition: .2s;
@@ -207,6 +221,7 @@ header i:hover {
 
 .newMenuText h2 {
     text-transform: uppercase;
+    padding-bottom: 5%;
 }
 
 .fullExperienceImage {
@@ -226,6 +241,8 @@ header i:hover {
 
 .fullExperienceText h2 {
     text-transform: uppercase;
+    padding-bottom: 5%;
+
 }
 
 /* DESSERT STYLES */
@@ -256,6 +273,8 @@ article {
 
 .dessertText h2 {
     text-transform: uppercase;
+    padding-bottom: 3%;
+
 }
 
 .dessertText p {
@@ -320,10 +339,24 @@ article {
 }
 
 .galleryPhoto {
-    width: calc(100% / 3 - 20px);
+    width: calc((100% - 20px * 2) / 3);
     float: left;
     margin: 10px;
-    /* display: block; */
+}
+
+.galleryPhoto:first-child {
+    margin-left: 0;
+}
+
+.galleryPhoto:last-child {
+    margin-right: 0;
+}
+
+.galleryPhoto img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .galleryPhotoMobile {
@@ -346,7 +379,7 @@ footer p {
 
 .footer h2 {
     text-transform: uppercase;
-    text-align: left;
+    text-align: center;
     padding-bottom: 10px;
 }
 
@@ -378,9 +411,21 @@ footer p {
 
 .footerContact,
 .footerForm {
-    width: 50%;
     float: left;
     margin: 50px 0 50px 0;
+}
+
+.footerContact {
+    width: 28%;
+    margin-right: 22%;
+}
+
+.footerForm {
+    width: 50%;
+}
+
+.footerForm h2 {
+    margin-right: 20%;
 }
 
 .footerForm form {
@@ -393,9 +438,9 @@ footer p {
     display: block;
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
-    font-size: 1.2rem;
+    font-size: 1rem;
     text-align: center;
-    line-height: 1.8rem;
+    line-height: 1.45rem;
     color: #1f2022;
     background: #ffffff;
     border: 2px solid #e75605;
@@ -417,7 +462,15 @@ footer p {
     padding: 10px 0 10px 30px;
     font-size: 1rem;
     color: #1f2022;
-    line-height: 1.7rem;
+    line-height: 1.45rem;
+}
+
+.footerForm input[type=email]::placeholder {
+    color: #1f2022;
+}
+
+.footerForm label {
+    display: none;
 }
 
 .copyright {
@@ -433,3 +486,348 @@ footer p {
 }
 
 /* MEDIA QUERIES */
+
+@media (max-width: 900px) {
+
+    header {
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    h1 {
+        font-size: 5rem;
+    }
+
+    .newMenuText {
+        padding: 4% 5% 0% 8%;
+    }
+
+    .fullExperienceText {
+        padding: 4% 8% 0% 5%;
+    }
+
+    .dessertImage {
+        max-width: 100%;
+        width: 40%;
+        margin: 0 auto;
+        padding-top: 10%;
+    }
+    
+    .dessertText {
+        width: 60%;
+        padding: 80px 20px 20px 20px;
+    }
+
+    .dessertText p {
+        line-height: 1.45rem;
+    }
+
+    .icons {
+        height: 60vh;
+    }
+
+    .theGram {
+        padding-top: 60px;
+        height: 70vh;
+    }
+}
+
+@media (max-width: 757px) {
+
+    header {
+        background-repeat: no-repeat;
+        background: left 10% / 60% 100% no-repeat url(assets/header-burger.png);
+    }
+
+    h1 {
+        font-size: 3.75rem;
+    }
+
+    .newMenuImage,
+    .newMenuText,
+    .fullExperienceImage,
+    .fullExperienceText{
+        width: 100%;
+        /* height: 90vh; */
+        float: none;
+    }
+
+    .newMenuText,
+    .fullExperienceText {
+        text-align: center;
+        padding: 5% 4% 10% 4%;
+        max-width: 100%;
+    }
+
+    .newMenuImage,
+    .fullExperienceImage {
+        height: 30vh;
+    }
+
+    .dessertImage {
+        max-width: 100%;
+        width: 40%;
+        margin: 0 auto;
+        padding-top: 12%;
+    }
+
+    .dessertText {
+        width: 60%;
+    }
+
+    .iconSlab{
+        padding: 50px 5px;
+    }
+
+    .iconSlab:nth-of-type(2) {
+        padding: 70px 50px 30px 50px;
+    }
+
+    .theGram {
+        height: 60vh;
+    }
+
+    .footerContact,
+    .footerForm {
+        float: none;
+        width: 100%;
+        text-align: center;
+        margin: 25px 0;
+    }
+
+    .footer h2 {
+        margin: 0;
+    }
+
+}
+
+@media (max-width: 535px) {
+
+    html {
+        font-size: 1rem;
+    }
+
+    header {
+        height: 50vh;
+        background: left 10% / 60% 100% no-repeat url(assets/header-burger.png);
+    }
+
+    h1 {
+        font-size: 3.75rem;
+        font-weight: 600;
+    }
+
+    .headerSocial {
+        display: none;
+    }
+
+    .mainNav {
+        position: absolute;
+        top: -200px;
+        left: 40%;
+        transition: all .4s linear;
+    }
+
+    .mainNav.active {
+        top: 10px;
+    }
+
+    .mainNav li {
+        display: block;
+    }
+
+    .mainNav a {
+        padding: 10px 3px;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .newMenuImage,
+    .fullExperienceImage {
+        height: 30vh;
+    }
+
+    .desserts {
+        width: 100%;
+        float: left;        
+    }
+
+    .dessertImage {
+        max-width: 100%;
+        width: 30%;
+        text-align: center;
+        margin: 0 auto;
+        padding: 50px 10px 10px 10px;
+    }
+
+    .dessertText {
+        width: 70%;
+        margin: -50px 0 0 0;
+    }
+
+    .icons {
+        background-position-x: -950px;
+    }
+
+    .iconContainer {
+        padding: 10px 0;
+    }
+
+    .iconSlab {
+        float: none;
+        padding: 10px 0;
+    }
+
+    .theGram {
+        padding: 20px 0 40px 0
+    }
+
+    .galleryPhoto {
+        display: none;
+    }
+
+    .galleryPhotoMobile {
+        display: block;
+    }
+
+    .galleryPhotoMobile:nth-child(4) {
+        margin: 0 0 0 4%;
+    }
+
+    .galleryPhotoMobile {
+        float: left;
+        width: calc((100% / 2) - 2%);
+    }
+
+    .footer {
+        padding: 25px 0 0 0;
+    }
+
+    .footerForm button,
+    .footerForm input[type=email] {
+        width: 100%;
+        text-align: center;
+    }
+
+    .footerForm input[type="email"] {
+        padding-left: 0;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 400px) {
+
+    html {
+        font-size: .7rem;
+    }
+    
+    header {
+        height: 50vh;
+        background: left 10% / 60% 100% no-repeat url(assets/header-burger.png);
+    }
+
+    h1 {
+        font-size: 3.75rem;
+        font-weight: 600;
+    }
+
+    .headerSocial {
+        display: none;
+    }
+
+    .mainNav {
+        position: absolute;
+        top: -200px;
+        left: 40%;
+        transition: all .4s linear;
+    }
+
+    .mainNav.active {
+        top: 10px;
+    }
+
+    .mainNav li {
+        display: block;
+    }
+
+    .mainNav a {
+        padding: 10px 3px;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .newMenuImage,
+    .fullExperienceImage {
+        height: 30vh;
+    }
+
+    .desserts {
+        width: 100%;
+        float: left;        
+    }
+
+    .dessertImage {
+        max-width: 100%;
+        width: 30%;
+        text-align: center;
+        margin: 0 auto;
+        padding: 50px 10px 10px 10px;
+    }
+
+    .dessertText {
+        width: 70%;
+        margin: -50px 0 0 0;
+    }
+
+    .iconContainer {
+        font-size: .6rem;
+    }
+
+    .iconSlab {
+        float: none;
+    }
+
+    .iconSlab i {
+        font-size: 1.5rem;
+    }
+
+    .theGram {
+        padding: 20px 0 40px 0
+    }
+
+    .galleryPhoto {
+        display: none;
+    }
+
+    .galleryPhotoMobile {
+        display: block;
+    }
+
+    .galleryPhotoMobile:nth-child(4) {
+        margin: 0 0 0 4%;
+    }
+
+    .galleryPhotoMobile {
+        float: left;
+        width: calc((100% / 2) - 2%);
+    }
+
+    .footer {
+        padding: 25px 0 0 0;
+    }
+
+    .footerForm button,
+    .footerForm input[type=email] {
+        width: 100%;
+        text-align: center;
+    }
+
+    .footerForm input[type="email"] {
+        padding-left: 0;
+        margin-bottom: 10px;
+    }
+}
